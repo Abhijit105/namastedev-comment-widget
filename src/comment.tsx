@@ -1,5 +1,10 @@
-function comment(): void {
-  const commentBtn = document.getElementById("comment-btn");
+function comment(): {
+  getComments: () => Array<string>;
+  setComments: () => void;
+  addComment: (newComment: string) => void;
+} {
+  const postEl = document.querySelector(".post");
+  const commentsEl = document.querySelector(".comments");
 
   let comments: Array<string> = [];
 
@@ -33,5 +38,31 @@ function comment(): void {
     }
 
     comments.push(newComment);
+    renderComments();
   }
+
+  function renderComments(): void {
+    if (!Array.isArray(comments) || comments.length === 0) {
+      return;
+    }
+
+    comments.forEach((comment: string): void => {
+      const commentEl = document.createElement("div");
+      commentEl.setAttribute("class", "comment");
+      const commentTextEl = document.createElement("p");
+      commentTextEl.textContent = comment;
+      commentEl.appendChild(commentTextEl);
+      commentsEl!.appendChild(commentEl);
+    });
+  }
+
+  return {
+    getComments,
+    setComments,
+    addComment,
+  };
 }
+
+const Comment = comment();
+
+export default Comment;

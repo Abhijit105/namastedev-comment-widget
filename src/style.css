@@ -51,9 +51,8 @@ body {
   font-weight: 700;
 }
 
-.post-btn {
+.btn {
   padding: 8px 16px;
-  background-color: var(--primary);
   border-radius: 8px;
   align-items: center;
   justify-content: center;
@@ -65,4 +64,39 @@ body {
   line-height: 21px;
   font-weight: 600;
   color: var(--textprimaryinverse);
+}
+
+.post-btn {
+  background-color: var(--primary);
+}
+
+.comment-box {
+  margin-left: 8px;
+  border: 1px solid var(--textprimary);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.comment-textarea {
+  height: 64px;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 18px;
+  background-color: var(--bgsecondary);
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  color: var(--textprimary);
+  outline: none;
+}
+
+.submit-comment-btn {
+  background-color: var(--secondary);
+  align-self: flex-end;
 }
