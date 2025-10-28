@@ -26,4 +26,12 @@ function comment(): void {
       comments = callback(comments);
     }
   }
+
+  function addComment(newComment: string): void {
+    if (typeof newComment !== "string" || !newComment) {
+      return;
+    }
+
+    comments.push(newComment);
+  }
 }
