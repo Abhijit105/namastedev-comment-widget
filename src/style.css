@@ -1,3 +1,13 @@
+:root {
+  --textprimary: #333;
+  --textsecondary: #666;
+  --primary: #674d63;
+  --secondary: #448d7e;
+  --bgprimary: #eee;
+  --bgsecondary: #d8d8d8;
+  --textprimaryinverse: #eee;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,11 +15,54 @@ body {
   justify-content: center;
   width: 100%;
   min-height: 100vh;
+  background-color: var(--bgprimary);
+  font-family: "Ubuntu Sans Mono", sans-serif;
+  color: var(--textprimary);
 }
 
 .post {
   width: 1200px;
   margin: auto;
-  border: 1px solid #333;
+  border: 1px solid var(--textprimary);
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 8px;
+}
+
+.post-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.post-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-author {
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 700;
+}
+
+.post-btn {
+  padding: 8px 16px;
+  background-color: var(--primary);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+  color: var(--textprimaryinverse);
 }
